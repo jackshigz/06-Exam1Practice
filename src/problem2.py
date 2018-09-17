@@ -2,7 +2,7 @@
 PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
+         Amanda Stouder, their colleagues and Haoran Shi.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
@@ -101,6 +101,22 @@ def problem2a(circle, rectangle, window):
       :type rectangle: rg.Rectangle
       :type window:    rg.RoseWindow
     """
+    circle
+    rectangle
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+    point1 = rectangle.get_upper_right_corner()
+    point2 = rectangle.get_lower_left_corner()
+    line = rg.Line(point1,point2)
+    line.arrow = 'last'
+    line.attach_to(window)
+    window.continue_on_mouse_click()
+    circle.fill_color = rectangle.outline_color
+    window.render()
+
+
     # ------------------------------------------------------------------
     # TODO: 2. Implement and test this function.
     #          Tests have been written for you (above).
